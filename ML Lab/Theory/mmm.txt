@@ -1,0 +1,6 @@
+MATLAB is a programming and numeric computing platform used by millions of engineers and scientists to analyze data, develop algorithms, and create models
+
+What is point detection?
+Point Detection
+
+This is used to detect isolated spots in an image. • The graylevel of an isolated point will be very different from its neighbors..

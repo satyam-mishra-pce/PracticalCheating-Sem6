@@ -1,0 +1,29 @@
+import pandas as pd
+from pandas import DataFrame 
+df_tennis = pd.read_csv('PlayTennis.csv')
+print("\n Given Play Tennis Data Set:\n\n", df_tennis)
+
+
+def id3(df, target_attribute_name, attribute_names, default_class=None):
+    from collections import Counter
+    cnt = Counter(x for x in df[target_attribute_name])
+    if len(cnt) == 1:
+        return next(iter(cnt)) 
+    elif df.empty or (not attribute_names):
+        return default_class  
+    else:
+        default_class = max(cnt.keys()) #No of YES and NO Class
+        gainz = [information_gain(df, attr, target_attribute_name) for attr in attribute_names] 
+        index_of_max = gainz.index(max(gainz)) 
+
+        best_attr = attribute_names[index_of_max]
+        tree = {best_attr:{}} # Iniiate the tree with best attribute as a node 
+        remaining_attribute_names = [i for i in attribute_names if i != best_attr]
+
+        for attr_val, data_subset in df.groupby(best_attr):
+            subtree = id3(data_subset,
+                        target_attribute_name,
+                        remaining_attribute_names,
+                        default_class)
+            tree[best_attr][attr_val] = subtree
+        return tree

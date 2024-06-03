@@ -1,0 +1,35 @@
+
+import pandas as pd
+df_music = pd.read_excel('Music.xlsx')
+df_music.head()
+X = df_music.drop('Genre', axis=1)
+y = df_music['Genre']
+X.head()
+y.head()
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier(criterion='entropy')
+model.fit(X, y)
+DecisionTreeClassifier(criterion='entropy')
+prediction = model.predict([[23, 1], [31, 0]])
+prediction
+array(['HIP HOP', 'CLASSICAL'], dtype=object)
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model.fit(X_train, y_train)
+DecisionTreeClassifier(criterion='entropy')prediction = model.predict(X_test)
+prediction
+y_test
+accuracy_score(y_test, prediction)
+import joblib
+joblib.dump(model, 'music-recommender')
+['music-recommender']
+model = joblib.load('music-recommender')
+prediction=model.predict([[23,1],[31,0]])
+from sklearn.tree import export_graphviz
+export_graphviz(model,out_file='music-recommeder.dot',feature_names=['Age','Gender'],class_names=sorted(y.unique()),label='all',rounded=True,filled=True)
+import pydotplus
+decision_tree=pydotplus.graph_from_dot_file('music-recommeder.dot')
+from IPython.display import Image
+Image(decision_tree.create_png())
+
+ 

@@ -1,0 +1,13 @@
+I=imread('IMG_2565.JPG');
+G=rgb2gray(I);
+B=im2bw(I);
+whos
+subplot(2,2,1);
+imshow(I);
+title('original image')
+subplot(2,2,2);
+imshow(G);
+title('Grey Image');
+subplot(2,2,3);
+imshow(B);
+title("Black and White image");

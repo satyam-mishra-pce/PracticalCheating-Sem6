@@ -1,0 +1,27 @@
+
+i= imread('IMG_2565.JPG');
+m= imresize(i,[600 600]);
+%subplot(3,3,1);
+imshow(m);
+title("original resize image");
+figure(1);
+[c,rect]=imcrop(m);
+%subplot(3,3,2);
+imshow(rect);
+title('cropped image by user');
+figure(2);
+d=imcrop(m,[150,200,250,350]);
+%subplot(3,3,3);
+imshow(d);
+title("cropped image by parameter");
+figure(3);
+e=imrotate(m,-120,'Bilinear','crop');
+%subplot(3,3,4);
+imshow(e);
+title("rotate image");
+
+figure(4);
+
+
+
+

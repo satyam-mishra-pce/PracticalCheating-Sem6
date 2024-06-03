@@ -1,0 +1,20 @@
+i=imread("IMG_2565.JPG");
+figure(1)
+subplot(1,1,1);
+imshow(i);
+x=rgb2gray(i);
+figure(2)
+subplot(2,2,1)
+imshow(x)
+title("Gray scale image");
+subplot(2,2,2)
+imhist(x)
+title("Histogram of gray scale image");
+im3 = histeq(x);
+subplot(2,2,3);
+imshow(im3)
+title("Equalized image");
+subplot(2,2,4);
+imhist(im3);
+title("Histogram of equalized image");
+

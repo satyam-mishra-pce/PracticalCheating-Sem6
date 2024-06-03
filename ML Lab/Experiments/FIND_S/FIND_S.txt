@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+data=pd.read_csv('DS_find_S_algorithm.csv')
+data
+arrdata=np.array(data)[:4,:4]
+arrdata
+arrdata=np.array(data)[:,:-1]
+arrdata
+isplay=np.array(data)[:,-1]
+isplay
+def train(con,tar):
+    for i,val in enumerate(tar):
+        if val=='yes':
+            specific_h = con[i].copy()
+            break
+            
+    for i,val in enumerate(con):
+        if tar[i]=='yes':
+            for x in range(len(specific_h)):
+                if val[x] != specific_h[x]:
+                    specific_h[x] = '?'
+                else:
+                    pass
+    return specific_h
+print(train(arrdata,isplay))

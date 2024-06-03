@@ -1,0 +1,25 @@
+i=imread("IMG_2565.JPG");
+c=imread("WhatsApp Image 2023-02-28 at 20.56.45.jpg");
+f= imfuse(i,c);
+g= rgb2gray(i);
+z= imadd(i,50);
+s= imsubtract(i,50);
+m= immultiply(i,2);
+subplot(2,3,1)
+imshow(z)
+title("Add");
+subplot(2,3,2)
+imshow(s);
+title("subtract");
+subplot(2,3,3)
+imshow(m);
+title("Multipication");
+subplot(2,3,4)
+imshow(i);
+title("original");
+subplot(2,3,5)
+imshow(f);
+title("fuse");
+subplot(2,3,6)
+imshow(c);
+title("Original2");

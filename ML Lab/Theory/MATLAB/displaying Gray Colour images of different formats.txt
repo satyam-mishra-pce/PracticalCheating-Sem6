@@ -1,0 +1,11 @@
+i= imread('C:\Documents and Settings\All Users\Documents\My Pictures\Sample
+Pictures\Blue hills.jpg');
+figure(1), subplot(2,2,1); imshow(i); title('Original Input image')
+a= imnoise (i, 'gaussian', .1,.01);
+subplot(2,2,2); imshow(a);title(' noisy image')
+h= fspecial('gaussian', [15,15], 3);
+% h1=rgb2gray(h)
+out= imfilter(a, h, 'conv');
+subplot(2,2,3); imshow(out);title('Output image')
+subplot(2,2,4);
+surf(1:15, 1:15, h), title('PSF')

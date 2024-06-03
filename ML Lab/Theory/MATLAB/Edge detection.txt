@@ -1,0 +1,21 @@
+i=imread('C:\Users\student\Desktop\oip2.jpg');
+figure(1)
+subplot(3,3,1)
+imshow(i)
+title('original image')
+o=im2bw(i);
+subplot(3,3,2)
+imshow(o)
+title('black&white image')
+s=edge(o,'sobel');
+subplot(3,3,3)
+imshow(s)
+title('sobel image')
+s=edge(o,'prewitt');
+subplot(3,3,4)
+imshow(s)
+title('previtt image')
+s=edge(o,'roberts');
+subplot(3,3,5)
+imshow(s)
+title('roberts image')

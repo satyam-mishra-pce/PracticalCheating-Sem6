@@ -1,0 +1,9 @@
+from sklearn import metrics
+print('Accuracy metrics')
+print('Accuracy of the classifer is',metrics.accuracy_score(y_test,y_pred)*100
+)
+print('Confusion matrix')
+print(metrics.confusion_matrix(y_test,y_pred))
+print('Recall and Precison ')
+print(metrics.recall_score(y_test,y_pred, average=None))
+print(metrics.precision_score(y_test,y_pred, average=None))

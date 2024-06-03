@@ -1,0 +1,24 @@
+Image segmentation is a commonly used technique in digital image processing and analysis to partition an image into multiple parts or regions, often based on the characteristics of the pixels in the image
+
+
+
+Edges are significant local changes of intensity in a digital image. An edge can be defined as a set of connected pixels that forms a boundary between two disjoint regions. There are three types of edges: 
+
+Horizontal edges
+Vertical edges
+Diagonal edges
+Edge Detection is a method of segmenting an image into regions of discontinuity. It is a widely used technique in digital image processing like 
+ 
+
+pattern recognition
+image morphology
+feature extraction
+Edge detection allows users to observe the features of an image for a significant change in the gray level. This texture indicating the end of one region in the image and the beginning of another. It reduces the amount of data in an image and preserves the structural properties of an image. 
+
+Edge Detection Operators are of two types: 
+
+Gradient – based operator which computes first-order derivations in a digital image like, Sobel operator, Prewitt operator, Robert operator
+Gaussian – based operator which computes second-order derivations in a digital image like, Canny edge detector, Laplacian of Gaussian 
+ 
+
+.

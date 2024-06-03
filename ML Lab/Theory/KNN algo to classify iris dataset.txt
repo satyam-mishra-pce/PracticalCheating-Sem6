@@ -1,0 +1,12 @@
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score
+classifier=KNeighborsClassifier(n_neighbors=8,p=3,metric='euclidean')
+classifier.fit(X_train,y_train)
+y_pred=classifier.predict(X_test)
+cm=confusion_matrix(y_test,y_pred)
+print('Confusion matrix is as follows\n',cm)
+print('Accuracy Metrics')
+print(classification_report(y_test,y_pred))
+print(" correct predicition",accuracy_score(y_test,y_pred))
+print(" worng predicition",(1-accuracy_score(y_test,y_pred)))
